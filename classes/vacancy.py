@@ -36,3 +36,17 @@ class Vacancy:
                 return f"от {self.salary.get('from')} руб/мес"
 
         return 'не указана'
+
+class HHVacancy(Vacancy):
+    """ HeadHunter Vacancy """
+
+    def __str__(self):
+        return f'HH: {self.name}, зарплата: {self.get_salary()}'
+
+
+class SJVacancy(Vacancy):
+    """ SuperJob Vacancy """
+
+    def __str__(self):
+        return f'SJ: {self.name}, зарплата: {self.get_salary()}'
+
