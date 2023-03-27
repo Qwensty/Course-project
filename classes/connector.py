@@ -51,7 +51,7 @@ class Connector:
         передан пустой словарь, возвращает все данные файла
         """
         result = []
-        with open(self.__data_file) as f:
+        with open(self.__data_file, encoding='utf-8') as f:
             data = json.load(f)
 
         if not query:
