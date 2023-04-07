@@ -9,13 +9,13 @@ class Vacancy:
         self.salary = data.get('salary')
         self.date_published = data['date_published']
 
-    def __gt__(self, other):
+    def __gt__(self, other) -> bool:
         return self.date_published > other.date_published
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> bool:
         return self.date_published < other.date_published
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'Вакансия - {self.name}, заработная плата - {self.get_salary()}'
 
     def get_salary(self) -> str:
@@ -40,13 +40,13 @@ class Vacancy:
 class HHVacancy(Vacancy):
     """ HeadHunter Vacancy """
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'HH: {self.name}, зарплата: {self.get_salary()}'
 
 
 class SJVacancy(Vacancy):
     """ SuperJob Vacancy """
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'SJ: {self.name}, зарплата: {self.get_salary()}'
 

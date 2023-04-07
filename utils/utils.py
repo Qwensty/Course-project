@@ -2,7 +2,7 @@ from classes.engine import HH, SuperJob
 from classes.vacancy import SJVacancy, HHVacancy
 
 
-def print_info(data: list | str):
+def print_info(data: list | str) -> None:
     """
     Вывод построчно с нумерацией, если список, либо вывод строки
     """
@@ -28,7 +28,7 @@ def get_vacancies(vacancies: list) -> list[HHVacancy | SJVacancy]:
     return vacancies_list
 
 
-def get_top_vacancies_by_to_salary(data, top_count):
+def get_top_vacancies_by_to_salary(data: list, top_count: str) -> list:
     """
     Возвращает top_count вакансий по максимальной зарплате
     """
@@ -58,7 +58,7 @@ def check_search(hh: HH, sj: SuperJob) -> bool:
     return hh.get_request()['items'] != [] or sj.get_request()['objects'] != []
 
 
-def get_top_vacancies_by_date(data: list, top_count: int) -> list:
+def get_top_vacancies_by_date(data: list, top_count: str) -> list:
     """
     Сортирует по дате
     """

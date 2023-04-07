@@ -1,11 +1,11 @@
 import os
-import codecs
+
 from classes.engine import Engine, HH, SuperJob
 from utils.utils import get_top_vacancies_by_date, print_info, check_search, \
     get_top_vacancies_by_to_salary
 
 
-def main():
+def main() -> None:
 
     path = os.path.join('data/all.json')
     connector = Engine.get_connector(path)
@@ -46,7 +46,7 @@ def main():
             print('Количество должно быть целым числом больше ноля. Попробуйте еще раз')
             continue
         else:
-            top_count = int(top_count)
+            top_count = str(int(top_count))
             break
 
     vacancies = connector.select({})

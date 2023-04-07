@@ -8,7 +8,7 @@ from classes.connector import Connector
 class Engine(ABC):
 
     @abstractmethod
-    def get_request(self):
+    def get_request(self) -> None:
         """
         Запрос вакансий через API
         """
@@ -20,6 +20,8 @@ class Engine(ABC):
         Возвращает экземпляр класса Connector
         """
         return Connector(file_name)
+
+
 
 
 class HH(Engine):
